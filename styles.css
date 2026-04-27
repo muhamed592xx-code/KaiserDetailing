@@ -1,0 +1,254 @@
+:root {
+  --bg-primary: #070d17;
+  --bg-secondary: #0f1e33;
+  --surface: #162a45;
+  --accent: #1f8cff;
+  --accent-soft: #66b3ff;
+  --text: #f2f7ff;
+  --text-muted: #bfcee1;
+  --border: #2a4468;
+  --max-width: 1120px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  color: var(--text);
+  background: linear-gradient(170deg, #050b14 0%, #0d1a2c 55%, #10253f 100%);
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(var(--max-width), calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  backdrop-filter: blur(10px);
+  background: rgba(5, 11, 20, 0.8);
+  border-bottom: 1px solid rgba(86, 132, 184, 0.28);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 68px;
+  gap: 1rem;
+}
+
+.brand {
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.main-nav {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.main-nav a:hover {
+  color: var(--accent-soft);
+}
+
+.hero {
+  position: relative;
+  min-height: 40vh;
+  display: grid;
+  align-items: center;
+  background:
+    linear-gradient(110deg, rgba(0, 0, 0, 0.72) 26%, rgba(13, 26, 44, 0.52)),
+    url("assets/hero-bg.png") center 55% / cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 75% 15%, rgba(31, 140, 255, 0.24), transparent 38%);
+}
+
+.hero-content {
+  position: relative;
+  padding: 3rem 0 3.5rem;
+  max-width: 960px;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-soft);
+}
+
+h1,
+h2,
+h3 {
+  line-height: 1.2;
+}
+
+h1 {
+  margin: 0.25rem 0 1rem;
+  font-size: clamp(2.15rem, 5.4vw, 3.55rem);
+}
+
+h2 {
+  margin: 0 0 1.6rem;
+  font-size: clamp(1.55rem, 3.3vw, 2.1rem);
+}
+
+.hero-content p {
+  max-width: 60ch;
+}
+
+.hero-actions {
+  margin-top: 1.8rem;
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 999px;
+  padding: 0.68rem 1.2rem;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #2e96ff, #0073eb);
+}
+
+.btn-secondary {
+  border: 1px solid rgba(172, 206, 247, 0.5);
+  background: rgba(15, 30, 51, 0.7);
+}
+
+.section {
+  padding: 4rem 0;
+}
+
+.section-dark {
+  background: linear-gradient(180deg, rgba(10, 22, 39, 0.88), rgba(13, 32, 56, 0.88));
+}
+
+.card-grid,
+.price-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 220px));
+  justify-content: center;
+  gap: 1rem;
+}
+
+@media (min-width: 1100px) {
+  .card-grid,
+  .price-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+.card,
+.price-card {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: linear-gradient(160deg, rgba(17, 34, 58, 0.95), rgba(8, 17, 31, 0.95));
+  padding: 1.15rem;
+}
+
+.card-highlight {
+  border-color: #3ca0ff;
+  box-shadow: 0 0 0 1px rgba(60, 160, 255, 0.32);
+}
+
+.price {
+  font-size: 1.7rem;
+  margin: 0.35rem 0;
+  font-weight: 800;
+  color: var(--accent-soft);
+}
+
+.section-intro {
+  color: var(--text-muted);
+  margin: -0.4rem 0 1.3rem;
+}
+
+.section-contact {
+  background: linear-gradient(170deg, rgba(14, 31, 53, 0.95), rgba(7, 16, 28, 0.95));
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.contact-list a {
+  color: var(--accent-soft);
+}
+
+.site-footer {
+  border-top: 1px solid rgba(84, 121, 168, 0.24);
+  color: var(--text-muted);
+  padding: 1rem 0 2.2rem;
+  font-size: 0.95rem;
+}
+
+@media (max-width: 760px) {
+  .header-inner {
+    padding: 0.5rem 0;
+    align-items: start;
+    flex-direction: column;
+  }
+
+  .main-nav {
+    gap: 0.7rem;
+    justify-content: center;
+  }
+
+  .hero {
+    min-height: 68vh;
+    background-position: center top;
+  }
+
+  .hero-content {
+    padding: 3.2rem 0 3rem;
+    text-align: center;
+  }
+
+  .hero-content p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+}
